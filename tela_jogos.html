@@ -5,27 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Haze</title>
     <link rel="shortcut icon" href="img/haze_logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="tela_jogos.css">
 </head>
 <body>
-    <header>
-        <img src="./img/haze_logo.ico" alt="haze">
+    <header class="topo">
+        <img id="logo" src="img/haze_logo_transparent-removebg-preview.png" alt="logo_haze">
+        <h3 id="haze">Haze</h3>
         <nav>
-            <a href="./pagina_inicial.html">Haze</a>
+            <a href="./tela_jogos.html">Jogos</a>
             <a href="./tabela.html">Cadastros</a>
-            <a href="#">Relatórios</a>
         </nav>
     </header>
     <main>
         <div id="capivarinha">
-            <h1>JOGUE AGORA</h1>
-            <h2>CAPIVARINHA</h2>
-            <img src="./img/capivara_controller_transparent.png" alt="capivara_controle">
+            <a href="#" class="button">JOGUE AGORA</a>
+            <h2>CAPIVARINHA <br> VOADORA</h2>
+            <img src="./img/capivara_controller_transparent.png" alt="capivara_controle" class="capivara">
         </div>
+
         <div id="roleta">
-            <h1>JOGUE AGORA</h1>
-            <h2>CAPIVARA MALUCA</h2>
-            <img src="./img/capivara_roleta.png" alt="capivara_roleta">
+            <a href="#" class="button">JOGUE AGORA</a>
+            <h2>CAPIVARA DA <br> ROLETA</h2>
+            <img src="./img/capivara_roleta.png" alt="capivara_roleta" class="capivara">
         </div>
     </main>
+    <script>
+        let logo = document.querySelector('#haze')
+        logo.addEventListener('click',()=>{
+            window.location.href = 'pagina_inicial.html'; 
+        })
+        let texto = document.querySelector('#logo')
+        texto.addEventListener('click',()=>{
+            window.location.href = 'pagina_inicial.html'; 
+        })
+        
+    </script>
 </body>
 </html>

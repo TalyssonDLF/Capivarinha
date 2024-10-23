@@ -4,36 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabela</title>
-    <style>
-        
-        table{
-            border-collapse: collapse;
-            color: white;
-        }
-
-        th,td{
-            border: 1px solid rgb(255, 255, 255);
-            padding: 5px 50px;
-        }
-
-    </style>
     <link rel="stylesheet" href="cadastro.css">
 </head>
 <body>
-    <a href="./tela_jogos.html"><img src="./img/seta_menu.png" class="seta_menu" alt="seta_menu"></a>
-    <table id="tabela">
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Email</th>
-                <th>Senha</th>
-            </tr>
-        </thead>
-        <tbody>
+    <header class="topo">
+        <img id="logo" src="img/haze_logo_transparent-removebg-preview.png" alt="logo_haze">
+        <h3 id="haze">Haze</h3>
+        <nav>
+            <a href="./tela_jogos.html">Jogos</a>
+            <a href="./tabela.html">Cadastros</a>
+        </nav>
+    </header>
+    <main>
+        <h1 id="titulo_tabela">Tabela de cadastros</h1>
+        <table id="tabela">
+            <thead>
+                <tr>
+                    <th> Nome </th>
+                    <th> Email </th>
+                    <th> Senha </th>
+                </tr>
+            </thead>
+            <tbody>
 
-        </tbody>
-    </table>
-    
+            </tbody>
+        </table>
+    </main>
     <script src="cadastro.js"></script>
+    <script>
+        let logo = document.querySelector('#haze')
+        logo.addEventListener('click',()=>{
+            window.location.href = 'pagina_inicial.html'; 
+        })
+        let texto = document.querySelector('#logo')
+        texto.addEventListener('click',()=>{
+            window.location.href = 'pagina_inicial.html'; 
+        })
+        
+    </script>
 </body>
 </html>
