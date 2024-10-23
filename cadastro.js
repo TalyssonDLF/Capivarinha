@@ -39,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Redirecionar para a página de login ou outra página
                 window.location.href = 'login.html';
             } else {
-                alert('Erro! Senhas não conferem.');
                 document.getElementById('errorMessage').style.display = 'block';
                 return;
             }
