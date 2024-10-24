@@ -1,20 +1,21 @@
 document.getElementById('login').addEventListener('submit', function(event) {
-    event.preventDefault();
+  event.preventDefault();
 
-    // Obtendo os valores do formulário
-    const email = document.getElementById('email').value;
-    const senha = document.getElementById('senha').value;
+  // Obtendo os valores do formulário
+  const email = document.getElementById('email').value;
+  const senha = document.getElementById('senha').value;
 
-    // Recuperando dados armazenados no localStorage
-    const storedEmail = localStorage.getItem('userEmail');
-    const storedPassword = localStorage.getItem('userPassword');
+  // Recuperando a lista de usuários armazenada no localStorage
+  const users = JSON.parse(localStorage.getItem('users')) || [];
 
-    // Verificando se o login é válido
-    if (email === storedEmail && senha === storedPassword) {
-      alert('Login bem-sucedido!');
-      // Redireciona para a página de boas-vindas
-      window.location.href = 'tela_jogos.html';
-    } else {
-      alert('Email ou senha incorretos.');
-    }
-  });
+  // Verificando se existe um usuário com o email e senha fornecidos
+  const user = users.find(user => user.email === email && user.password === senha);
+
+  if (user) {
+    alert('Login bem-sucedido!');
+    // Redireciona para a página de boas-vindas
+    window.location.href = 'tela_jogos.html';
+  } else {
+    alert('Email ou senha incorretos.');
+  }
+});
