@@ -1,0 +1,38 @@
+/* GERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #101728;
+    /* Fundo padrão para evitar espaço vazio */
+}
+
+
+/* HEADER */
+
+/* Header fixo no topo */
+.topo {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    position: fixed;
+    /* Fixo no topo */
+    top: 0;
+    left: 20px;
+}
+
+#logo {
+    width: 100px;
+    object-fit: contain;
+}
+
+#haze {
+    font-size: 1.5rem;
+    color: white;
+    margin-left: 10px;
+}
