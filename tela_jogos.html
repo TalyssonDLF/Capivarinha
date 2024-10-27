@@ -1,44 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Haze</title>
     <link rel="shortcut icon" href="img/haze_logo.ico" type="image/x-icon">
-    <link rel="stylesheet" href="tela_jogos.css">
+    <link rel="stylesheet" href="./tela_jogos.css">
 </head>
+
 <body>
-    <header class="topo">
-        <img id="logo" src="img/haze_logo_transparent-removebg-preview.png" alt="logo_haze">
-        <h3 id="haze">Haze</h3>
-        <nav>
-            <a href="./tela_jogos.html">Jogos</a>
-            <a href="./tabela.html">Cadastros</a>
-        </nav>
-    </header>
-    <main>
-        <div id="capivarinha">
-            <a href="#" class="button">JOGUE AGORA</a>
-            <h2>CAPIVARINHA <br> VOADORA</h2>
-            <img src="./img/capivara_controller_transparent.png" alt="capivara_controle" class="capivara">
+    <nav class="navbar">
+        <div class="left-nav">
+            <div class="logo">
+                <img src="./img/haze_logo.png" alt="Haze Logo">
+                <span>Haze</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="./tabela.html">Cadastros</a></li>
+                <li><a href="#">Relatórios</a></li>
+            </ul>
+        </div>
+        <div class="profile-icon">
+            <a href="#"><img src="./img/perfil.png" alt="Perfil"></a>
+        </div>
+    </nav>
+
+    <div class="card-container">
+        <div class="card">
+            <div class="content">
+                <h2>FLY CAPIVARA</h2>
+                <button>JOGUE AGORA!</button>
+            </div>
+            <img src="./img/capivara_voadora.png">
         </div>
 
-        <div id="roleta">
-            <a href="#" class="button">JOGUE AGORA</a>
-            <h2>CAPIVARA DA <br> ROLETA</h2>
-            <img src="./img/capivara_roleta.png" alt="capivara_roleta" class="capivara">
+        <div class="card">
+            <div class="content">
+                <h2>CAPIVARA ROLETA</h2>
+                <button>JOGUE AGORA!</button>
+            </div>
+            <img src="./img/capivara_roleta.png">
         </div>
-    </main>
-    <script>
-        let logo = document.querySelector('#haze')
-        logo.addEventListener('click',()=>{
-            window.location.href = 'pagina_inicial.html'; 
-        })
-        let texto = document.querySelector('#logo')
-        texto.addEventListener('click',()=>{
-            window.location.href = 'pagina_inicial.html'; 
-        })
-        
-    </script>
+    </div>
 </body>
+
 </html>
