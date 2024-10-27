@@ -26,6 +26,10 @@ body {
     left: 20px;
 }
 
+#logo, #haze {
+    cursor: pointer;
+}
+
 #logo {
     width: 100px;
     object-fit: contain;

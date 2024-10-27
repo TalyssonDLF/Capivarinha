@@ -1,0 +1,65 @@
+/* A página */
+#pagina {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+/* A roleta */
+#roleta {
+    /* Tamanho da div da roleta (raio * 2) */
+    height: calc(var(--js-roleta-raio) * 2);
+    width: calc(var(--js-roleta-raio) * 2);
+
+    /* Animação da roleta girando */
+    animation: rodar-roleta 15s ease-out 2s infinite forwards;
+
+    position: relative;
+}
+
+/* O trinagulo da roleta */
+.triangulo {
+    /* Criando o triangulo com bordas transparentes */
+    border: var(--js-base) solid transparent;
+    border-top: var(--js-roleta-raio) solid transparent;
+    border-bottom: var(--js-roleta-raio) solid var(--cor-triangulo);
+    height: 0;
+    width: 0;
+
+    /* Posicionando o triangulo no meio da div da roleta */
+    position: absolute;
+    left: calc(50% - var(--js-base));
+}
+
+/* O número do triangulo da roleta */
+.triangulo-label {
+    /* Posicionando o número no triangulo */
+    position: absolute;
+    bottom: calc(-1 * var(--js-roleta-raio) * 0.95);
+    translate: -50%;
+
+    /* Estilizando o número */
+    color: #eee;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+/* Cores dos triangulos */
+.preto {
+    --cor-triangulo: #333;
+}
+
+.vermelho {
+    --cor-triangulo: #c33;
+}
+
+.especial {
+    --cor-triangulo: #aa3;
+}
+
+/* Animação da roleta */
+@keyframes rodar-roleta {
+    100% {
+        rotate: calc(360deg * 5);
+    }
+}

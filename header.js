@@ -1,12 +1,12 @@
 function main() {
-    const logo = document.querySelector('#haze');
-    const texto = document.querySelector('#logo');
+    const logo = document.querySelector('#logo');
+    const titulo = document.querySelector('#haze');
 
     logo?.addEventListener('click', () => {
         window.location.href = 'pagina_inicial.html';
     });
 
-    texto?.addEventListener('click', () => {
+    titulo?.addEventListener('click', () => {
         window.location.href = 'pagina_inicial.html';
     });
 }
