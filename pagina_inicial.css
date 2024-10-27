@@ -1,3 +1,33 @@
+/* Estilo do corpo */
+body {
+    background-color: #101728;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Header sem borda e ajustado */
+.topo {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: transparent;
+    position: fixed;
+    width: 100%; /* Ocupa toda a largura */
+    top: 0;
+    z-index: 1000; /* Garante que o header fique por cima */
+}
+
+#logo {
+    height: 110px;
+    margin-right: 10px;
+}
+
+#haze {
+    font-size: 2rem;
+    color: white;
+}
+
+/* Página 1 - Tela inteira com gradiente */
 #pagina1 {
     height: 100vh;
     display: flex;
@@ -6,244 +36,121 @@
     background: radial-gradient(circle at bottom right, #1f41bb, #1f41bb, #101728, #101728);
 }
 
-#pagina2,
-#pagina3,
-#pagina4,
-#pagina5 {
-    background-color: #101728;
-}
-
-#pagina3 {
-    height: 60vh;
-}
-
-#pagina4 {
-    height: 100vh;
-}
-
-#pagina5 {
-    height: 50vh;
-}
-
-.secao {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    padding-left: 40px;
+/* Centralizando conteúdo com o botão abaixo */
+.txt-principal {
     color: white;
-    font-size: 3rem;
-    text-align: center;
-}
-
-/* Texto principal */
-#txt-principal {
     display: flex;
-    justify-content: space-around;
-    gap: 30px;
-    /* Espaço entre o título e o botão */
-    padding: 20px;
-    border-radius: 10px;
+    flex-direction: column; /* Coloca os elementos em coluna */
+    align-items: center; /* Centraliza horizontalmente */
+    gap: 20px; /* Espaço entre elementos */
 }
 
 /* Botão estilizado */
 .botao {
-    display: inline-block;
     padding: 15px 30px;
     font-size: 1.2rem;
     color: white;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 30px;
     background: linear-gradient(to right, #971570, #f953c6);
+    border-radius: 30px;
+    text-decoration: none;
+    text-align: center;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Efeito de hover no botão */
 .botao:hover {
     transform: scale(1.1);
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
 }
 
-.foguete {
-    width: 300px;
+div a{
+    padding-left: 200px;
 }
 
-.title2 {
-    margin-top: 280px;
-    margin-left: 100px;
-    width: 100%;
-    height: 100%;
-    padding-left: 40px;
-    color: #9340ff;
-    font-size: 4rem;
-    display: flex;
-
+/* Páginas 2, 3, 4, 5 - Fundo escuro */
+#pagina2, #pagina3, #pagina4, #pagina5 {
+    background-color: #101728;
 }
 
+/* Página 2 - Texto à esquerda, imagem à direita */
 .pagina2 {
+    display: flex;
+    align-items: center;
     height: 100vh;
+    padding: 50px 100px;
+    gap: 50px;
     background: radial-gradient(circle at top right, #1f41bb, #1f41bb, #101728, #101728);
 }
 
-.paragr2 {
-    font-size: 20px;
-    color: white;
-    margin-bottom: 410px;
-    margin-left: 140px;
+/* Imagem na página 2 */
+#imagem2 {
+    width: 40%;
+    height: auto;
+    border-radius: 20px;
 }
 
-.rollup {
+/* Texto na página 2 */
+.paragr{
+    font-size: 20px;
+    color: white;
+    width: 50%;
+    text-align: left;
+}
+
+/* Página 3 - Texto e imagem invertidos */
+#pagina3 {
     display: flex;
     align-items: center;
-    padding: 10px;
+    justify-content: space-between;
+    height: 60vh;
+    padding: 50px 100px;
+    gap: 50px;
+}
+
+/* Imagem na página 3 */
+#imagem3 {
+    width: 40%;
+    height: auto;
+    border-radius: 20px;
+}
+
+/* Páginas 4 e 5 - Layout flexível */
+#pagina4, #pagina5 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 50px 100px;
+    gap: 50px;
+}
+
+#imagem4, #imagem5 {
+    width: 40%;
+    height: auto;
+    border-radius: 40px;
+}
+
+/* Títulos */
+.title2, .title3, .title4, .title5 {
+    font-size: 4rem;
+    color: #9340ff;
+    margin-bottom: 20px;
+}
+
+/* Rolagem para cima */
+.rollup {
     position: fixed;
-    /* Fixo na parte de baixo da tela */
     bottom: 10px;
     right: 10px;
-    transform: rotate(180deg);
+    cursor: pointer;
 }
 
 .seta {
     width: 50px;
+    transform: rotate(180deg);
 }
 
-.seta:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-}
-
-.conteudo {
+.btn-entrar{
     display: flex;
-    flex-direction: column;
-}
-
-#pagina2 {
-    display: flex;
-    align-items: center;
-    margin-right: 10px;
-
-}
-
-#imagem2 {
-    float: right;
-    display: flex;
-    margin-right: 400px;
-    height: auto;
-    margin-top: 180px;
-}
-
-.pagina2 {
-    align-items: center;
-}
-
-.title3 {
-    margin-top: 280px;
-    margin-left: 50px;
-    width: 100%;
-    height: 100%;
-    padding-left: 40px;
-    color: #9340ff;
-    font-size: 4rem;
-    display: flex;
-    margin-bottom: 50px;
-
-}
-
-.paragr3 {
-    font-size: 20px;
-    color: white;
-    margin-bottom: 410px;
-    margin-left: 100px;
-    margin-right: 200px;
-}
-
-.conteudo2 {
-    display: flex;
-    flex-direction: column;
-}
-
-
-#imagem3 {
-    float: left;
-    display: flex;
-    margin-right: 200px;
-    margin-left: 300px;
-    height: 50vh;
-    margin-top: 100px;
-    border-radius: 40px;
-}
-
-.title4 {
-    margin-top: 280px;
-    margin-left: 50px;
-    width: 100%;
-    height: 100%;
-    padding-left: 40px;
-    color: #9340ff;
-    font-size: 4rem;
-    display: flex;
-    margin-bottom: 50px;
-
-}
-
-.paragr4 {
-    font-size: 20px;
-    color: white;
-    margin-bottom: 410px;
-    margin-left: 100px;
-    margin-right: 200px;
-}
-
-.conteudo4 {
-    display: flex;
-    flex-direction: column;
-}
-
-#imagem4 {
-    float: right;
-    display: flex;
-    margin-right: 200px;
-    margin-left: 300px;
-    height: 50vh;
-    margin-top: 100px;
-    border-radius: 40px;
-}
-
-
-.title5 {
-    margin-top: 100px;
-    margin-left: 150px;
-    width: 100%;
-    height: 100%;
-    padding-left: 40px;
-    color: #9340ff;
-    font-size: 4rem;
-    display: flex;
-    margin-bottom: 50px;
-
-}
-
-
-.paragr5 {
-    font-size: 20px;
-    color: white;
-    margin-bottom: 300px;
-    margin-left: 100px;
-    margin-right: 100px;
-}
-
-.conteudo5 {
-    display: flex;
-    flex-direction: column;
-}
-
-#imagem5 {
-    float: right;
-    display: flex;
-    margin-right: 200px;
-    margin-left: 300px;
-    height: 50vh;
-    margin-top: 50px;
-    border-radius: 40px;
+    justify-content: center;
 }
