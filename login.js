@@ -1,4 +1,6 @@
-document.getElementById('login').addEventListener('submit', function (event) {
+const login = document.getElementById('login');
+
+login.addEventListener('submit', event => {
     event.preventDefault();
 
     // Obtendo os valores do formulário
@@ -13,11 +15,13 @@ document.getElementById('login').addEventListener('submit', function (event) {
     O método find() percorre o array de usuários e verifica se existe algum usuário com o email e a senha fornecidos.*/
     const user = users.find(user => user.email === email && user.password === senha);
 
-    if (user) {
-        alert('Login bem-sucedido!');
-        // Redireciona para a página de boas-vindas
-        window.location.href = 'tela_jogos.html';
-    } else {
+    if (!user) {
         alert('Email ou senha incorretos.');
+        return;
     }
+
+    localStorage.setItem('sessao', user);
+    alert('Login bem-sucedido!');
+    // Redireciona para a página de boas-vindas
+    window.location.href = 'tela_jogos.html';
 });
