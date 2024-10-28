@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Haze</title>
     <link rel="shortcut icon" href="img/haze_logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./reviews.css">
     <link rel="stylesheet" href="./capivara-voadora.css">
 </head>
+
 <body>
     <!-- Header -->
     <header class="topo">
@@ -20,8 +23,35 @@
             <img src="./img/capivara_voadora.png">
             <span>Em Breve</span>
         </section>
+
+        <form action="./roleta.html" id="review" data-tag="capivara-voadora">
+            <h2>Avaliação</h2>
+
+            <div id="estrelas">
+                <input type="radio" name="estrelas" id="estrela_1" value="1">
+                <label for="estrela_1">1</label>
+
+                <input type="radio" name="estrelas" id="estrela_2" value="2">
+                <label for="estrela_2">2</label>
+
+                <input type="radio" name="estrelas" id="estrela_3" value="3">
+                <label for="estrela_3">3</label>
+
+                <input type="radio" name="estrelas" id="estrela_4" value="4">
+                <label for="estrela_4">4</label>
+
+                <input type="radio" name="estrelas" id="estrela_5" value="5">
+                <label for="estrela_5">5</label>
+            </div>
+
+            <textarea rows="5" name="comentario" id="comentario" placeholder="Digite aqui a sua avaliação..."></textarea>
+
+            <button type="submit" class="button">Avaliar</button>
+        </form>
     </main>
 
-    <script src="header.js"></script>
+    <script src="./header.js"></script>
+    <script src="./reviews.js"></script>
 </body>
+
 </html>

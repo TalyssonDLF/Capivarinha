@@ -40,3 +40,19 @@ body {
     color: white;
     margin-left: 10px;
 }
+
+.button {
+    background: linear-gradient(90deg, #c12cd8 0%, #f0563d 100%);
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    text-decoration: none;
+}
+
+.button:hover {
+    transform: scale(1.05);
+}

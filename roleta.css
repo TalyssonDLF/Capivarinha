@@ -1,8 +1,9 @@
 /* A página */
 #pagina {
+    margin-top: 5rem;
     display: grid;
     place-items: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 /* A roleta */
@@ -10,11 +11,12 @@
     /* Tamanho da div da roleta (raio * 2) */
     height: calc(var(--js-roleta-raio) * 2);
     width: calc(var(--js-roleta-raio) * 2);
+    position: relative;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
 
     /* Animação da roleta girando */
-    animation: rodar-roleta 15s ease-out 2s infinite forwards;
-
-    position: relative;
+    animation: rodar-roleta 15s ease-out 2s normal forwards;
 }
 
 /* O trinagulo da roleta */
