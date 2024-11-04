@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haze</title>
+    <link rel="shortcut icon" href="/assets/img/haze_logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/assets/css/index.css">
+</head>
+
+<body>
+    <header class="topo">
+        <img id="logo" src="img/haze_logo_transparent-removebg-preview.png" alt="Logo Haze">
+        <h3 id="haze">Haze</h3>
+    </header>
+
+    <main>
+        <section id="pagina1" class="secao">
+            <div class="txt-principal">
+                <img class="foguete" src="img/Foguete.png" alt="Foguete Haze">
+                <h1>Jogue com <br> a gente!</h1>
+                <button class="botao" id="open-modal">Entrar</button>
+            </div>
+        </section>
+
+        <section id="pagina2" class="secao">
+            <img id="imagem2" src="img/jogando-amigos.png" alt="Amigos jogando">
+            <div class="conteudo">
+                <h1 class="title">Jogue <br>com amigos</h1>
+                <p class="paragr2">Use a Haze para se divertir com as pessoas que você conhece.<br><br>
+                    A Haze pode conectar você a novas pessoas.</p>
+            </div>
+        </section>
+
+        <section id="pagina3" class="secao">
+            <img id="imagem3" src="img/cara_celular.png" alt="Pessoa usando celular">
+            <div class="conteudo2">
+                <h1 class="title">Lorem Ipsum</h1>
+                <p class="paragr3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </section>
+
+        <section id="pagina4" class="secao">
+            <img id="imagem4" src="img/celular.png" alt="Imagem de celular">
+            <div class="conteudo4">
+                <h1 class="title">Lorem Ipsum</h1>
+                <p class="paragr4">Quasi laboriosam mollitia animi repellat eaque distinctio.</p>
+            </div>
+        </section>
+
+        <section id="pagina5" class="secao">
+            <img id="imagem5" src="img/jogos.png" alt="Imagem de jogos">
+            <div class="conteudo5">
+                <h1 class="title">Fale conosco</h1>
+                <p>36406961 - Bruno Viotto Dos Santos</p>
+                <p>38242753 - Lucas Henrique Borille</p>
+                <p>37767615 - Talysson Decol Lago Ferreira</p>
+                <p>38885142 - Gabriel Wruca Riccetto</p>
+                <p>35538694 - Vittor Marques Dallacqua Longati</p>
+                <p>38720507 - Thiago Ferreira Medici</p>
+            </div>
+        </section>
+
+        <div class="rollup">
+            <img onclick="topFunction()" id="seta" src="img/seta.png" alt="Voltar ao topo">
+        </div>
+    </main>
+
+    <!-- Modal de Login -->
+<div id="modal-login" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal-login')">&times;</span>
+        <h2>Login</h2>
+        <form id="login-form">
+            <input type="email" id="email" name="email" placeholder="Email" required><br><br>
+            <input type="password" id="senha" name="senha" placeholder="Senha" required><br><br>
+            <input type="submit" value="Entrar" class="button" id="entrar">
+            <br>
+            <div class="cadastro">
+                <a href="#" id="open-cadastro">Cadastre-se</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal de Cadastro -->
+<div id="cadastro-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('cadastro-modal')">&times;</span>
+        <h2>Cadastro</h2>
+        <form id="cadastro-form">
+            <input type="text" id="nome" name="nome" placeholder="Nome Completo" required><br><br>
+            <input type="email" id="email" name="email" placeholder="Email" required><br><br>
+            <input type="password" id="senha" name="senha" placeholder="Senha" required><br><br>
+            <input type="password" id="ConfirmaçãoSenha" name="ConfirmaçãoSenha" placeholder="Confirme sua senha"
+            required><br><br>
+
+        <p id="errorMessage" style="color: red; display: none;">As senhas não coincidem!</p>
+        <input type="submit" value="Registrar" class="button" id="registrar">
+            <br>
+            <div class="cadastro">
+                <a href="#" id="open-login">Já tem conta? Login</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+    <script src="/header.js"></script>
+    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/cadastro.js"></script>
+</body>
+
+</html>

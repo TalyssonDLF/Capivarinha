@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Haze</title>
     <link rel="shortcut icon" href="img/haze_logo.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="stylesheet" href="./reviews.css">
-    <link rel="stylesheet" href="./capivara-voadora.css">
-
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/reviews.css">
+    <link rel="stylesheet" href="/assets/css/roleta.css">
+    
     <script src="sessao.js"></script>
 </head>
 
@@ -20,13 +20,13 @@
         <h3 id="haze">Haze</h3>
     </header>
 
+    <!-- Conteúdo da página -->
     <main id="pagina">
-        <section id="em-breve">
-            <img src="./img/capivara_voadora.png">
-            <span>Em Breve</span>
-        </section>
 
-        <form action="./roleta.html" id="review" data-tag="capivara-voadora">
+        <!-- Roleta -->
+        <section id="roleta"></section>
+
+        <form action="./roleta.html" id="review" data-tag="roleta">
             <h2>Avaliação</h2>
 
             <div id="estrelas">
@@ -46,15 +46,17 @@
                 <label for="estrela_5">5</label>
             </div>
 
-            <textarea rows="5" name="comentario" id="comentario"
-                placeholder="Digite aqui a sua avaliação..."></textarea>
+            <textarea rows="5" name="comentario" id="comentario" placeholder="Digite aqui a sua avaliação..."></textarea>
 
             <button type="submit" class="button">Avaliar</button>
         </form>
+
     </main>
 
-    <script src="./header.js"></script>
-    <script src="./reviews.js"></script>
+    <!-- Scrips -->
+    <script src="/assets/js/header.js"></script>
+    <script src="/assets/js/roleta.js"></script>
+    <script src="/assets/js/reviews.js"></script>
 </body>
 
 </html>
