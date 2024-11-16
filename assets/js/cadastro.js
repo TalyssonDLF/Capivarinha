@@ -1,6 +1,6 @@
 
 function main() {
-    const form = document.getElementById('cadastro');
+    const form = document.getElementById('cadastro-modal');
 
     // Verifica se a página tem o formulário de cadastro
     if (form === null) {
