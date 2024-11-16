@@ -3,11 +3,11 @@ function main() {
     const titulo = document.querySelector('#haze');
 
     logo?.addEventListener('click', () => {
-        window.location.href = 'pagina_inicial.html';
+        window.location.href = 'tela_jogos.html';
     });
 
     titulo?.addEventListener('click', () => {
-        window.location.href = 'pagina_inicial.html';
+        window.location.href = 'tela_jogos.html';
     });
 }
 

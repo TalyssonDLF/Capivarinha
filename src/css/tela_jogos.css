@@ -123,3 +123,37 @@ body {
 .card img:hover {
     transform: scale(1.05);
 }
+/* Dropdown do Perfil */
+.profile-menu {
+    display: none; /* Escondido inicialmente */
+    position: absolute;
+    top: 70px; /* Ajuste baseado na altura do navbar */
+    right: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    width: 150px;
+    z-index: 1000;
+}
+
+.profile-menu ul {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+}
+
+.profile-menu ul li {
+    margin: 10px 0;
+}
+
+.profile-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 5px 10px;
+}
+
+.profile-menu ul li a:hover {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+}

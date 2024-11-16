@@ -16,7 +16,7 @@
         <h3 id="haze">Haze</h3>
     </header>
 
-    <main>
+    <main id="mainContent">
         <section id="pagina1" class="secao">
             <div class="txt-principal">
                 <img class="foguete" src="/img/Foguete.png" alt="Foguete">
@@ -24,21 +24,6 @@
                 <button id="openModalBtn" class="botao">Entrar</button>
             </div>
         </section>
-
-        <!-- Modal de Login -->
-        <div id="loginModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Login</h2>
-                    <form id="login">
-                        <input type="email" id="email" name="email" placeholder="Email" required><br><br>
-                        <input type="password" id="senha" name="senha" placeholder="Senha" required><br><br>
-                        <input type="submit" value="Entrar" class="button" id="entrar">
-                        <br>
-                        <a href="/public/cadastro.html" id="cadastro_login">Cadastro</a>
-                    </form>
-            </div>
-        </div>
 
         <section class="pagina2">
             <img id="imagem2" src="/img/jogando-amigos.png" alt="meninas jogando">
@@ -77,13 +62,43 @@
                 <p>38720507 - Thiago Ferreira Medici</p>
             </div>
         </section>
+
+        <div class="rollup" id="rollup">
+            <img class="seta" src="/img/seta.png" alt="seta">
+        </div>
     </main>
 
-    <footer class="rollup">
-        <img class="seta" src="/img/seta.png" alt="seta">
-    </footer>
+    <div id="mainContent">
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" data-target="loginModal">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="email" id="email" name="email" placeholder="Email" required><br><br>
+                <input type="password" id="password" name="password" placeholder="Senha" required><br><br>
+                <input type="submit" value="Entrar" class="button" id="entrar">
+                <br>
+            </form>
+            <p>Não tem uma conta? <a href="#" id="openRegisterFromLogin">Cadastre-se</a></p>
+        </div>
+    </div>
+    
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" data-target="registerModal">&times;</span>
+            <h2>Cadastro</h2>
+            <form id="registerForm">
+                <input type="text" id="username" name="username" placeholder="Nome de usuário" required><br><br>
+                <input type="email" id="registerEmail" name="email" placeholder="Email" required><br><br>
+                <input type="password" id="registerPassword" name="password" placeholder="Senha" required><br><br>
+                <input type="submit" value="Cadastrar" class="button">
+                <br>
+            </form>
+            <p>Já tem uma conta? <a href="#" id="openLoginFromRegister">Faça login</a></p>
+        </div>
+    </div>
+    </div>
 
-    <script src="/src/scripts/header.js"></script>
     <script src="/src/scripts/script.js"></script>
 </body>
 

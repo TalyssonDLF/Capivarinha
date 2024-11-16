@@ -1,37 +1,76 @@
-// Seleciona os elementos do modal e botões
-const modal = document.getElementById('loginModal');
-const openModalBtn = document.getElementById('openModalBtn');
-const closeModalBtn = document.querySelector('.close');
+const mainContent = document.getElementById('mainContent'); 
+const loginModal = document.getElementById('loginModal');
+const registerModal = document.getElementById('registerModal');
 
-// Abre o modal de login ao clicar no botão "Entrar"
-openModalBtn.onclick = function () {
+const openModalBtn = document.getElementById('openModalBtn'); // Botão de abrir login
+const closeModalBtns = document.querySelectorAll('.close'); // Todos os botões de fechar modal
+
+const openRegisterLink = document.getElementById('openRegisterFromLogin'); // Link "Cadastre-se"
+const openLoginLink = document.getElementById('openLoginFromRegister'); // Link "Faça login"
+
+// Funções para abrir e fechar modais
+function openModal(modal) {
     modal.style.display = 'block';
-};
+    mainContent.classList.add('blur');
+}
 
-// Fecha o modal ao clicar no "X"
-closeModalBtn.onclick = function () {
+function closeModal(modal) {
     modal.style.display = 'none';
-};
+    mainContent.classList.remove('blur');
+}
 
-// Fecha o modal ao clicar fora da área de conteúdo
-window.onclick = function (event) {
-    if (event.target === modal) {
-        modal.style.display = 'none';
-    }
-};
+// Eventos para abrir o modal de login
+if (openModalBtn) {
+    openModalBtn.addEventListener('click', () => openModal(loginModal));
+}
 
-// Lógica básica para submissão do formulário de login
-const loginForm = document.getElementById('loginForm');
-loginForm.onsubmit = function (event) {
-    event.preventDefault(); // Evita o recarregamento da página
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
+// Eventos para fechar modais
+closeModalBtns.forEach(button => {
+    button.addEventListener('click', function () {
+        const target = this.getAttribute('data-target'); // Identifica qual modal fechar
+        if (target === 'loginModal') {
+            closeModal(loginModal);
+        } else if (target === 'registerModal') {
+            closeModal(registerModal);
+        }
+    });
+});
 
-    // Exemplo de validação simples
-    if (username === 'admin' && password === '1234') {
-        alert('Login bem-sucedido!');
-        modal.style.display = 'none'; // Fecha o modal após o login
+// Eventos para alternar entre login e cadastro
+openRegisterLink.addEventListener('click', (event) => {
+    event.preventDefault();
+    closeModal(loginModal);
+    openModal(registerModal);
+});
+
+openLoginLink.addEventListener('click', (event) => {
+    event.preventDefault();
+    closeModal(registerModal);
+    openModal(loginModal);
+});
+
+// Fecha modal ao clicar fora do conteúdo
+window.addEventListener('click', (event) => {
+    if (event.target === loginModal) closeModal(loginModal);
+    if (event.target === registerModal) closeModal(registerModal);
+});
+
+
+const scrollToTopBtn = document.getElementById('rollup');
+scrollToTopBtn.style.display = 'none';
+// Mostra ou esconde o botão com base na posição da rolagem
+window.addEventListener('scroll', function () {
+    if (window.scrollY > 300) { // Mostra o botão após 300px de rolagem
+        scrollToTopBtn.style.display = 'block';
     } else {
-        alert('Usuário ou senha incorretos.');
+        scrollToTopBtn.style.display = 'none';
     }
-};
+});
+
+// Rola suavemente para o topo quando o botão é clicado
+scrollToTopBtn.addEventListener('click', function () {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
