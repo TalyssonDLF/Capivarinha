@@ -1,6 +1,6 @@
 
 function main() {
-    // Verifica se a página tem a tabela para exibir os dados
+    
     const tabela = document.querySelector('#tabela tbody');
     const tabela2 = document.querySelector('#tabela');
 
@@ -11,7 +11,7 @@ function main() {
     tabela2.appendChild(headers);
     tabela2.appendChild(dados);
 
-    // Recuperar os dados do localStorage
+    
     let objetos = JSON.parse(localStorage.getItem(tag)) || [];
 
     const header = document.createElement('tr');
@@ -22,7 +22,7 @@ function main() {
     }
     headers.appendChild(header);
 
-    // Para cada usuário, criamos uma nova linha (<tr>) e adicionamos três colunas (<td>), cada uma contendo o nome, email e senha do usuário.
+    
     for (const objeto of objetos) {
         let linha = document.createElement('tr');
 
@@ -32,7 +32,7 @@ function main() {
             linha.appendChild(data);
         }
 
-        // Adicionando a nova linha na tabela
+        
         dados.appendChild(linha);
     }
 }
