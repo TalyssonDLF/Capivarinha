@@ -82,10 +82,6 @@ function registerSubmitEvent(event) {
     showSuccessMessage(`Cadastrado com sucesso!`);
 
     document.getElementById('registerModal').style.display = 'none';
-
-    setTimeout(() => {
-        window.location.href = '/public/tela_jogos.html'; // Tela de jogos
-    }, 500);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
