@@ -1,3 +1,4 @@
+/* CSS Base - mantendo estrutura original */
 #pagina1 {
     height: 100vh;
     display: flex;
@@ -25,17 +26,20 @@
     height: 50vh;
 }
 
-@media (max-width: 1200px) {
-    .secao {
-        flex-direction: column;
-        text-align: center;
-        font-size: 2.5rem;
-        padding: 20px;
-    }
-
-
-#txt-principal {
+.secao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-left: 40px;
     color: white;
+    font-size: 3rem;
+    text-align: center;
+}
+
+/* Texto principal */
+#txt-principal {
     display: flex;
     justify-content: space-around;
     gap: 30px;
@@ -43,6 +47,7 @@
     border-radius: 10px;
 }
 
+/* Botão estilizado */
 .botao {
     display: inline-block;
     padding: 15px 30px;
@@ -73,7 +78,6 @@
     color: #9340ff;
     font-size: 4rem;
     display: flex;
-
 }
 
 .pagina2 {
@@ -88,36 +92,10 @@
     margin-left: 140px;
 }
 
-.rollup {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    position: fixed;
-    /* Fixo na parte de baixo da tela */
-    bottom: 10px;
-    right: 10px;
-    transform: rotate(180deg);
-}
-
-.seta {
-    width: 45px;
-}
-
-.seta:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-}
-
-.conteudo {
-    display: flex;
-    flex-direction: column;
-}
-
 #pagina2 {
     display: flex;
     align-items: center;
     margin-right: 10px;
-
 }
 
 #imagem2 {
@@ -128,12 +106,7 @@
     margin-top: 180px;
 }
 
-.pagina2 {
-    align-items: center;
-
-}
-
-.title3 {
+.title3, .title4, .title5 {
     margin-top: 280px;
     margin-left: 50px;
     width: 100%;
@@ -143,10 +116,9 @@
     font-size: 4rem;
     display: flex;
     margin-bottom: 50px;
-
 }
 
-.paragr3 {
+.paragr3, .paragr4 {
     font-size: 20px;
     color: white;
     margin-bottom: 410px;
@@ -154,11 +126,10 @@
     margin-right: 200px;
 }
 
-.conteudo2 {
+.conteudo, .conteudo2, .conteudo4, .conteudo5 {
     display: flex;
     flex-direction: column;
 }
-
 
 #imagem3 {
     float: left;
@@ -168,32 +139,6 @@
     height: 50vh;
     margin-top: 100px;
     border-radius: 40px;
-}
-
-.title4 {
-    margin-top: 280px;
-    margin-left: 50px;
-    width: 100%;
-    height: 100%;
-    padding-left: 40px;
-    color: #9340ff;
-    font-size: 4rem;
-    display: flex;
-    margin-bottom: 50px;
-
-}
-
-.paragr4 {
-    font-size: 20px;
-    color: white;
-    margin-bottom: 410px;
-    margin-left: 100px;
-    margin-right: 200px;
-}
-
-.conteudo4 {
-    display: flex;
-    flex-direction: column;
 }
 
 #imagem4 {
@@ -206,36 +151,6 @@
     border-radius: 40px;
 }
 
-
-.title5 {
-    margin-top: 100px;
-    width: 100%;
-    height: 100%;
-    color: #9340ff;
-    font-size: 4rem;
-    display: flex;
-    margin-bottom: 50px;
-
-}
-
-
-.paragr5 {
-    font-size: 20px;
-    color: white;
-    margin-bottom: 300px;
-    margin-left: 100px;
-    margin-right: 100px;
-}
-
-.conteudo5 {
-    display: flex;
-    flex-direction: column;
-}
-
-.conteudo5 > p {
-    font-size: 2rem;
-}
-
 #imagem5 {
     float: right;
     display: flex;
@@ -246,34 +161,50 @@
     border-radius: 40px;
 }
 
-.blur {
-    filter: blur(5px); /* Ajuste a intensidade do blur conforme necessário */
-    transition: filter 0.3s ease; /* Transição suave para o blur */
+/* Navegação */
+.rollup {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    transform: rotate(180deg);
 }
 
-/* Certifique-se de que o modal está acima do conteúdo desfocado */
+.seta {
+    width: 50px;
+}
+
+.seta:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* Modal styles */
 .modal {
-    display: none; /* Inicialmente escondido */
+    display: none;
     position: fixed;
-    z-index: 10; /* Modal acima do conteúdo */
+    z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    display: grid;
+    place-items: center;
 }
 
 .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
+    background-color: #fff;
+    margin: 10% auto;
     padding: 20px;
-    border: 1px solid #888;
+    border-radius: 8px;
     width: 80%;
     max-width: 400px;
-    z-index: 20; /* Garante que o conteúdo do modal esteja acima */
+    text-align: center;
 }
-
 
 .close {
     color: #aaa;
@@ -286,7 +217,6 @@
 .close:hover {
     color: #000;
 }
-
 
 .input-group {
     margin-bottom: 15px;
@@ -318,8 +248,83 @@
     background: linear-gradient(to right, #971570, #f953c6);
 }
 
-.mainContent{
-    width: 100%;
-}
+/* Media Queries */
+@media screen and (max-width: 1024px) {
+    #pagina2, #pagina3, #pagina4, #pagina5 {
+        height: auto;
+        padding: 20px;
+    }
+
+    .title2, .title3, .title4, .title5 {
+        margin: 40px 0 20px 0;
+        padding-left: 20px;
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .paragr2, .paragr3, .paragr4, .paragr5 {
+        margin: 20px;
+        text-align: center;
+    }
+
+    #pagina2, #pagina3, #pagina4, #pagina5 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #imagem2, #imagem3, #imagem4, #imagem5 {
+        float: none;
+        margin: 20px auto;
+        width: 80%;
+        max-width: 500px;
+        height: auto;
+    }
+
+    .conteudo, .conteudo2, .conteudo4, .conteudo5 {
+        width: 100%;
+        align-items: center;
+    }
 }
 
+@media screen and (max-width: 768px) {
+    .secao {
+        padding: 20px;
+        font-size: 2rem;
+        flex-direction: column;
+    }
+
+    #txt-principal {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .foguete {
+        width: 200px;
+    }
+
+    .title2, .title3, .title4, .title5 {
+        font-size: 2.5rem;
+        margin: 20px 0;
+    }
+
+    .paragr2, .paragr3, .paragr4, .paragr5 {
+        font-size: 16px;
+        margin: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .title2, .title3, .title4, .title5 {
+        font-size: 2rem;
+    }
+
+    .botao {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+
+    #imagem2, #imagem3, #imagem4, #imagem5 {
+        width: 95%;
+    }
+}
