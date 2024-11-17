@@ -1,4 +1,4 @@
-const mainContent = document.getElementById('mainContent'); 
+const mainContent = document.querySelector('main'); 
 const loginModal = document.getElementById('loginModal');
 const registerModal = document.getElementById('registerModal');
 
@@ -19,7 +19,7 @@ function closeModal(modal) {
     mainContent.classList.remove('blur');
 }
 
-// Eventos para abrir o modal de login
+// Evento para abrir o modal de login
 if (openModalBtn) {
     openModalBtn.addEventListener('click', () => openModal(loginModal));
 }
@@ -27,16 +27,13 @@ if (openModalBtn) {
 // Eventos para fechar modais
 closeModalBtns.forEach(button => {
     button.addEventListener('click', function () {
-        const target = this.getAttribute('data-target'); // Identifica qual modal fechar
-        if (target === 'loginModal') {
-            closeModal(loginModal);
-        } else if (target === 'registerModal') {
-            closeModal(registerModal);
-        }
+        const target = this.getAttribute('data-target');
+        if (target === 'loginModal') closeModal(loginModal);
+        if (target === 'registerModal') closeModal(registerModal);
     });
 });
 
-// Eventos para alternar entre login e cadastro
+// Alternar entre login e cadastro
 openRegisterLink.addEventListener('click', (event) => {
     event.preventDefault();
     closeModal(loginModal);
@@ -49,13 +46,11 @@ openLoginLink.addEventListener('click', (event) => {
     openModal(loginModal);
 });
 
-// Fecha modal ao clicar fora do conteúdo
+// Fecha o modal clicando fora dele
 window.addEventListener('click', (event) => {
     if (event.target === loginModal) closeModal(loginModal);
     if (event.target === registerModal) closeModal(registerModal);
 });
-
-
 const scrollToTopBtn = document.getElementById('rollup');
 scrollToTopBtn.style.display = 'none';
 // Mostra ou esconde o botão com base na posição da rolagem

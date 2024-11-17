@@ -35,6 +35,7 @@
 
 
 #txt-principal {
+    color: white;
     display: flex;
     justify-content: space-around;
     gap: 30px;
@@ -245,16 +246,12 @@
     border-radius: 40px;
 }
 
-<<<<<<< Updated upstream
 .blur {
     filter: blur(5px); /* Ajuste a intensidade do blur conforme necessário */
     transition: filter 0.3s ease; /* Transição suave para o blur */
 }
 
 /* Certifique-se de que o modal está acima do conteúdo desfocado */
-=======
-
->>>>>>> Stashed changes
 .modal {
     display: none; /* Inicialmente escondido */
     position: fixed;
@@ -267,10 +264,6 @@
     background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
 }
 
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto;
@@ -328,3 +321,5 @@
 .mainContent{
     width: 100%;
 }
+}
+
