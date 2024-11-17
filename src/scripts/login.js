@@ -64,7 +64,7 @@ function registerSubmitEvent(event) {
 
     const users = JSON.parse(localStorage.getItem('users') ?? '[]') || [];
 
-    if (users.some(x => x.email == email)) {
+    if (users.some(x => x.Email == email)) {
         showMessage('E-mail já cadastrado');
         return;
     }
