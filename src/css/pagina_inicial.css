@@ -203,7 +203,7 @@ html, body {
 }
 
 .modal-content {
-    background-color: #fff;
+    background-color: #101728;
     margin: 10% auto;
     padding: 20px;
     border-radius: 8px;
@@ -212,6 +212,55 @@ html, body {
     text-align: center;
 }
 
+h2{
+    color: #fff;
+}
+
+.descricao{
+    margin-top: 10px;
+    color: #fff;
+}
+
+#openRegisterFromLogin{
+   color: #f953c6;
+}
+
+#entrar.button{
+    height: 40px;
+    width: 100px;
+    font-size: 20px;
+}
+
+#email{
+    align-items: center;
+    margin-top: 10px;
+}
+#password{
+    margin-right: 16px;
+}
+input#usename{
+    text-align: center;
+    margin-top: 30px;
+}
+#registerEmail{
+    margin-right: 16px;
+}
+#registerPassword{
+    margin-right: 16px;
+}
+.descricao2{
+    margin-top: 10px;
+    color: #fff;
+}
+#openLoginFromRegister{
+    color: #f953c6;
+}
+input.button{
+    height: 40px;
+    width: 120px;
+    font-size: 17px;
+    text-align: center;
+}
 .close {
     color: #aaa;
     float: right;
