@@ -1,4 +1,3 @@
-
 body {
     font-family: "Arial", sans-serif;
     background: radial-gradient(circle at bottom right,
@@ -12,8 +11,9 @@ body {
     align-items: center;
     height: 100vh;
     overflow: auto;
+    margin: 0;
+    position: relative; /* Necessário para que o posicionamento do .profile-icon funcione */
 }
-
 
 .navbar {
     width: 100%;
@@ -22,14 +22,14 @@ body {
     justify-content: space-between;
     align-items: center;
     color: white;
+    box-sizing: border-box;
+    position: relative; /* Necessário para o posicionamento do profile-icon */
 }
-
 
 .left-nav {
     display: flex;
     align-items: center;
 }
-
 
 .logo {
     display: flex;
@@ -46,7 +46,6 @@ body {
     font-weight: bold;
 }
 
-
 .nav-links {
     list-style: none;
     display: flex;
@@ -60,6 +59,11 @@ body {
     font-weight: bold;
 }
 
+.profile-icon {
+    position: absolute; /* Fixar a imagem no canto superior direito */
+    top: 20px;
+    right: 20px;
+}
 
 .profile-icon img {
     width: 40px;
@@ -69,13 +73,13 @@ body {
     transform: scale(1.05);
 }
 
-
 .card-container {
     display: flex;
     gap: 20px;
     margin-top: 120px;
+    flex-wrap: wrap; /* Adicionando flex-wrap para quebrar a linha em telas menores */
+    justify-content: center;
 }
-
 
 .card {
     display: flex;
@@ -83,6 +87,10 @@ body {
     padding: 30px;
     border-radius: 20px;
     width: 600px;
+    margin: 10px; /* Adicionando margem entre as cartas */
+    box-sizing: border-box;
+    flex: 1 1 250px; /* Permite que as cartas se ajustem */
+    max-width: 100%;
 }
 
 .card .content {
@@ -122,4 +130,108 @@ body {
 
 .card img:hover {
     transform: scale(1.05);
+}
+
+/* Media Queries para responsividade */
+
+/* Telas grandes (desktops) */
+@media (max-width: 1200px) {
+    .navbar {
+        padding: 15px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .card-container {
+        margin-top: 80px;
+    }
+
+    .card {
+        width: 450px; /* Cartas mais estreitas em telas menores */
+    }
+
+    .card h2 {
+        font-size: 28px;
+    }
+
+    .card a {
+        font-size: 24px;
+    }
+}
+
+/* Telas médias (tablets e pequenas telas de desktop) */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .nav-links {
+        gap: 10px;
+        margin-left: 0;
+    }
+
+    .card-container {
+        margin-top: 60px;
+        justify-content: center;
+    }
+
+    .card {
+        width: 350px; /* Cartas menores para tablets */
+        padding: 20px;
+    }
+
+    .card h2 {
+        font-size: 24px;
+    }
+
+    .card a {
+        font-size: 20px;
+    }
+}
+
+/* Telas pequenas (celulares) */
+@media (max-width: 480px) {
+    body {
+        height: auto;
+        padding-bottom: 20px; /* Adiciona um pouco de espaço na parte inferior */
+    }
+
+    .navbar {
+        padding: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        display: block;
+        gap: 10px;
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+
+    .card-container {
+        margin-top: 40px;
+        flex-direction: column; /* Organiza as cartas em uma coluna */
+        align-items: center;
+    }
+
+    .card {
+        width: 90%; /* Cartas mais estreitas em telas pequenas */
+        margin: 10px 0;
+    }
+
+    .card h2 {
+        font-size: 22px;
+    }
+
+    .card a {
+        font-size: 18px;
+    }
+
+    .profile-icon {
+        top: 10px; /* Ajusta a posição do ícone em telas pequenas */
+        right: 10px;
+    }
 }

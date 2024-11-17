@@ -5,13 +5,11 @@ body {
     padding: 0;
 }
 
-
 h1 {
     color: white;
     font-size: 40pt;
     margin: 20px;
 }
-
 
 input {
     all: unset;
@@ -20,7 +18,6 @@ input {
     box-shadow: none;
     padding: 8px 20px;
 }
-
 
 .button {
     display: inline-block;
@@ -40,17 +37,14 @@ input {
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
 }
 
-
 input:hover {
     background-color: #3633cdc9;
 }
-
 
 .seta_menu {
     transform: rotate(90deg);
     width: 50px;
 }
-
 
 #cadastro_login {
     color: white;
@@ -61,7 +55,6 @@ input:hover {
     text-decoration: underline;
 }
 
-
 .topo {
     position: fixed;
     top: 0;
@@ -70,6 +63,10 @@ input:hover {
     width: 100%;
     height: 7%;
     z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
 }
 
 #haze {
@@ -81,7 +78,6 @@ input:hover {
     cursor: pointer;
 }
 
-/* Tabelas */
 table {
     border-collapse: collapse;
     color: white;
@@ -103,10 +99,10 @@ td {
     color: rgba(255, 255, 255, 0.669);
 }
 
-
 #titulo_tabela {
     font-size: 3rem;
     margin: 4rem 0 2rem;
+    margin-top: 6rem;
 }
 
 #tabela {
@@ -114,24 +110,33 @@ td {
     min-width: 800px;
 }
 
+/* Nav (links de navegação) */
+nav {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os links se movam para a nova linha */
+    gap: 10px; /* Espaçamento entre os links */
+    padding: 10px;
+    box-sizing: border-box;
+    justify-content: flex-start; /* Alinha os links à esquerda */
+    width: 100%;
+    overflow: hidden;
+    word-wrap: break-word; /* Quebra as palavras longas caso necessário */
+}
 
 nav>a {
-    display: inline;
     font-size: 1.2rem;
     color: white;
-    margin-left: 10px;
-    padding: 0 30px;
+    padding: 8px 15px;
     text-decoration: none;
+    white-space: normal; /* Permite quebra de linha quando necessário */
 }
 
 nav>a:hover {
     text-decoration: underline;
 }
 
-
-
+/* Responsividade para telas grandes (1200px ou menos) */
 @media (max-width: 1200px) {
-
     table {
         width: 90%;
         font-size: 28pt;
@@ -149,10 +154,20 @@ nav>a:hover {
     .topo {
         height: 6%;
     }
+
+    #titulo_tabela {
+        font-size: 2.5rem;
+        margin-top: 5rem;
+    }
+
+    nav>a {
+        font-size: 1rem;
+        padding: 6px 12px;
+    }
 }
 
+/* Responsividade para telas menores (768px ou menos) */
 @media (max-width: 768px) {
-
     table {
         width: 100%;
         font-size: 24pt;
@@ -167,23 +182,28 @@ nav>a:hover {
         padding: 8px 15px;
     }
 
+    nav {
+        justify-content: center;
+        width: 100%;
+    }
+
     nav>a {
-        font-size: 1rem;
-        padding: 0 15px;
+        font-size: 0.9rem;
+        padding: 6px 10px;
+        white-space: normal; /* Permite quebra de linha nos links */
     }
 
     .seta_menu {
         width: 40px;
     }
 
-    
     .topo {
         height: 5%;
     }
 
     #titulo_tabela {
         font-size: 2rem;
-        margin: 2rem 0;
+        margin-top: 4rem;
     }
 
     #tabela {
@@ -192,6 +212,7 @@ nav>a:hover {
     }
 }
 
+/* Responsividade para telas de celular muito pequenas (480px ou menos) */
 @media (max-width: 480px) {
     table {
         font-size: 20pt;
@@ -206,26 +227,33 @@ nav>a:hover {
         padding: 6px 12px;
     }
 
-    nav>a {
-        font-size: 0.9rem;
+    nav {
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap; /* Permite que os links se movam para a nova linha */
         padding: 0 10px;
     }
 
-    
+    nav>a {
+        font-size: 0.8rem;
+        padding: 5px 8px;
+        display: inline-block;
+        white-space: normal; /* Permite quebra de linha quando necessário */
+    }
+
     .topo {
         height: 4%;
     }
 
     #titulo_tabela {
         font-size: 1.5rem;
-        margin: 1.5rem 0;
+        margin-top: 3rem;
     }
 
     .seta_menu {
         width: 35px;
     }
 
-    
     #tabela {
         width: 100%;
     }
