@@ -24,8 +24,8 @@ function showMessage(message, type = 'error') {
 function loginSubmitEvent(event) {
     event.preventDefault();
 
-    const email = document.getElementsByName('email').value;
-    const password = document.getElementsByName('password').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
 
     // Verificação de login de administrador
     if (email === 'admin' && password === 'admin') {
@@ -39,14 +39,14 @@ function loginSubmitEvent(event) {
     // Verificação de usuários normais
     const users = JSON.parse(localStorage.getItem('users') ?? '[]') || [];
 
-    const user = users.find(user => user.email === email && user.password === password);
+    const user = users.find(user => user.Email === email && user.Senha === password);
 
     if (!user) {
         showMessage('E-mail/Usuário ou senha incorretos.');
         return;
     }
 
-    showSuccessMessage(`Bem-vindo, ${user.username}!`);
+    showSuccessMessage(`Bem-vindo, ${user.Nome}!`);
     event.target.reset();
 
     document.getElementById('loginModal').style.display = 'none';
@@ -56,9 +56,11 @@ function loginSubmitEvent(event) {
 }
 
 function registerSubmitEvent(event) {
-    const username = document.getElementsByName('username').value;
-    const email = document.getElementsByName('email').value;
-    const password = document.getElementsByName('password').value;
+    event.preventDefault();
+
+    const username = document.getElementById('username').value;
+    const email = document.getElementById('registerEmail').value;
+    const password = document.getElementById('registerPassword').value;
 
     const users = JSON.parse(localStorage.getItem('users') ?? '[]') || [];
 
@@ -68,14 +70,22 @@ function registerSubmitEvent(event) {
     }
 
     users.push({
-        name: username,
-        email: email,
-        password: password
+        Nome: username,
+        Email: email,
+        Senha: password
     });
+
+    console.log()
 
     localStorage.setItem('users', JSON.stringify(users));
 
     showSuccessMessage(`Cadastrado com sucesso!`);
+
+    document.getElementById('registerModal').style.display = 'none';
+
+    setTimeout(() => {
+        window.location.href = '/public/tela_jogos.html'; // Tela de jogos
+    }, 500);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
