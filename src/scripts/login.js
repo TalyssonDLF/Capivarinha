@@ -2,12 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('loginForm');
     const registerForm = document.getElementById('registerForm');
 
-    // Função para exibir mensagens de erro ou sucesso
-    function showMessage(message, type = 'error') {
-        alert(`${type === 'error' ? 'Erro:' : 'Sucesso:'} ${message}`);
-    }
-
-    // Função para exibir mensagem de sucesso no DOM
+    // Função para exibir mensagens de sucesso no DOM
     function showSuccessMessage(message) {
         const successMessage = document.createElement('div');
         successMessage.textContent = message;
@@ -26,6 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             successMessage.remove();
         }, 3000);
+    }
+
+    // Função para exibir mensagens de erro
+    function showMessage(message, type = 'error') {
+        alert(`${type === 'error' ? 'Erro:' : 'Sucesso:'} ${message}`);
     }
 
     // Validação de email
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            showMessage(`Bem-vindo, ${user.username}!`, 'success');
+            showSuccessMessage(`Bem-vindo, ${user.username}!`);
             loginForm.reset();
 
             // Fecha o modal de login
