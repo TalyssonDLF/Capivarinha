@@ -8,6 +8,14 @@ const closeModalBtns = document.querySelectorAll('.close'); // Todos os botões 
 const openRegisterLink = document.getElementById('openRegisterFromLogin'); // Link "Cadastre-se"
 const openLoginLink = document.getElementById('openLoginFromRegister'); // Link "Faça login"
 
+document.addEventListener('DOMContentLoaded', () => {
+    // Certifique-se de que todos os modais estão escondidos ao carregar a página
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => {
+        modal.style.display = 'none';
+    });
+});
+
 // Funções para abrir e fechar modais
 function openModal(modal) {
     modal.style.display = 'block';
