@@ -46,7 +46,7 @@ function loginSubmitEvent(event) {
         return;
     }
 
-    localStorage.setItem('sessao', user);
+    localStorage.setItem('sessao', JSON.stringify(user));
 
     showSuccessMessage(`Bem-vindo, ${user.Nome}!`);
     event.target.reset();
