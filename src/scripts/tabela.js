@@ -1,6 +1,27 @@
 
+function updateTableEntry(tag, index) {
+    const entry = document.getElementsByTagName('tr')[index + 1];
+
+    const obj = {};
+    for (let i = 0; i < entry.childElementCount - 2; i++) {
+        const cell = entry.childNodes.item(i);
+        console.log(cell);
+
+        const key = cell.getAttribute('data-key');
+        const value = cell.children[0].value;
+
+        obj[key] = value;
+    }
+
+    const data = JSON.parse(localStorage.getItem(tag) ?? '[]') || [];
+    data[index] = obj;
+    localStorage.setItem(tag, JSON.stringify(data));
+
+    window.location.reload();
+}
+
 function deleteTableEntry(tag, index) {
-    let data = JSON.parse(localStorage.getItem(tag) ?? '[]') || [];
+    const data = JSON.parse(localStorage.getItem(tag) ?? '[]') || [];
 
     data.splice(index, 1);
     console.log(tag, index);
@@ -32,9 +53,9 @@ function main() {
         header.appendChild(valorHeader);
     }
     if (isAdmin) {
-        // const colunaUpdate = document.createElement('th');
-        // colunaUpdate.innerText = 'Update'
-        // header.appendChild(colunaUpdate);
+        const colunaUpdate = document.createElement('th');
+        colunaUpdate.innerText = 'Update'
+        header.appendChild(colunaUpdate);
 
         const colunaDelete = document.createElement('th');
         colunaDelete.innerText = 'Delete'
@@ -47,21 +68,32 @@ function main() {
         let linha = document.createElement('tr');
         for (const coluna of Object.keys(objeto)) {
             const data = document.createElement('td');
-            data.innerText = objeto[coluna];
+            if (!isAdmin) {
+                data.innerText = objeto[coluna];
+            }
+            else {
+                data.setAttribute('data-key', coluna);
+                const input = document.createElement('input');
+                input.value = objeto[coluna];
+                data.appendChild(input);
+            }
             linha.appendChild(data);
         }
         if (isAdmin) {
-            // const botaoUpdate = document.createElement('td');
-            // botaoUpdate.innerText = 'Delete';
-            // linha.appendChild(botaoUpdate);
-            // botaoUpdate.addEventListener('click', updateTableEntry.bind(null, tag, index));
+            const celulaUpdate = document.createElement('td');
+            const botaoUpdate = document.createElement('button');
+            botaoUpdate.classList.add('button');
+            botaoUpdate.innerText = 'Update';
+            botaoUpdate.addEventListener('click', updateTableEntry.bind(null, tag, index));
+            celulaUpdate.appendChild(botaoUpdate);
+            linha.appendChild(celulaUpdate);
 
             const celulaDelete = document.createElement('td');
             const botaoDelete = document.createElement('button');
-            botaoDelete.classList.add('button')
+            botaoDelete.classList.add('button');
             botaoDelete.innerText = 'Delete';
-            celulaDelete.appendChild(botaoDelete);
             botaoDelete.addEventListener('click', deleteTableEntry.bind(null, tag, index));
+            celulaDelete.appendChild(botaoDelete);
             linha.appendChild(celulaDelete);
         }
         dados.appendChild(linha);
