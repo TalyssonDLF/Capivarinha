@@ -8,8 +8,8 @@ function onClick(event) {
     let reviews = JSON.parse(localStorage.getItem(tag)) || [];
 
     const review = {
-        estrelas: estrelas,
-        comentario: comentario
+        Estrelas: estrelas,
+        Comentario: comentario
     };
 
     reviews.push(review);
