@@ -29,6 +29,11 @@ function loginSubmitEvent(event) {
 
     // Verificação de login de administrador
     if (email === 'admin' && password === 'admin') {
+        localStorage.setItem('sessao', JSON.stringify({
+            Nome: 'admin',
+            Email: 'admin',
+            Senha: 'admin'
+        }));
         showSuccessMessage('Login como administrador bem-sucedido!');
         setTimeout(() => {
             window.location.href = '/public/tela_jogos.html'; // Página de administração
