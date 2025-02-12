@@ -28,6 +28,11 @@ body {
 
 #logo, #haze {
     cursor: pointer;
+    transition: 0.3s;
+}
+
+#logo:hover, #haze:hover {
+    transform: scale(1.2);
 }
 
 #logo {

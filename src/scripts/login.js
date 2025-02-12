@@ -36,7 +36,7 @@ function loginSubmitEvent(event) {
         }));
         showSuccessMessage('Login como administrador bem-sucedido!');
         setTimeout(() => {
-            window.location.href = '/public/tela_jogos.html'; // Página de administração
+            window.location.href = '../public/tela_jogos.html'; // Página de administração
         }, 500);
         return;
     }
@@ -58,7 +58,7 @@ function loginSubmitEvent(event) {
 
     document.getElementById('loginModal').style.display = 'none';
     setTimeout(() => {
-        window.location.href = '/public/tela_jogos.html'; // Tela de jogos
+        window.location.href = '../public/tela_jogos.html'; // Tela de jogos
     }, 500);
 }
 
